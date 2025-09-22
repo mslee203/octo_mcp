@@ -3,11 +3,11 @@ requires = ["uv_build>=0.8.15,<0.9.0"]
 build-backend = "uv_build"
 
 [project]
-name = "octo-mcp-server"
+name = "selta-octo"
 version = "0.1.0"
 description = "A server for octo-mcp"
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.12"
 dependencies = [
     "mcp>=1.13.0",
     "smithery>=0.1.23",
@@ -20,4 +20,4 @@ dev = "smithery.cli.dev:main"
 playground = "smithery.cli.playground:main"
 
 [tool.smithery]
-server = "octo_mcp.server:create_server"
+server = "octo_run.server:create_server"
