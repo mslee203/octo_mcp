@@ -29,7 +29,7 @@ def main():
     )
 
     # Get port from environment variable (Smithery sets this to 8081)
-    port = int(os.environ.get("PORT", 8080))
+    port = int(os.environ.get("PORT", 8081))
     print(f"Listening on port {port}")
 
     uvicorn.run(app, host="0.0.0.0", port=port, log_level="debug")
