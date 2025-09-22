@@ -1,15 +1,15 @@
-from fastmcp import FastMCP
+from mcp.server.fastmcp import FastMCP
+from smithery.decorators import smithery
 
-mcp = FastMCP(name="octo")
+@smithery.server()
+def create_server():
+    """Create and return a FastMCP server instance."""
+    
+    server = FastMCP(name="selta-octo")
 
-@mcp.tool
-def multiply(a: float, b: float) -> float:
-    """Multiplies two numbers together."""
-    return a * b
+    @server.tool()
+    def multiply(a: float, b: float) -> float:
+        """Multiplies two numbers together."""
+        return a * b
 
-
-if __name__ == "__main__":
-    mcp.run(
-        transport="streamable-http",
-        path="/",
-    )
+    return server
