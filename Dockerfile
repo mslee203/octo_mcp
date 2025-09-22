@@ -1,4 +1,3 @@
-# Dockerfile
 # Use a Python image with uv pre-installed
 FROM ghcr.io/astral-sh/uv:python3.12-alpine
 
@@ -26,8 +25,11 @@ RUN --mount=type=cache,target=/root/.cache/uv \
 # Place executables in the environment at the front of the path
 ENV PATH="/app/.venv/bin:$PATH"
 
+# Set port
+ENV PORT=8081
+
 # Reset the entrypoint, don't invoke `uv`
 ENTRYPOINT []
 
 # Run the application directly using the venv Python
-CMD ["python", "main.py"]
+CMD ["python", "main.py"] 
