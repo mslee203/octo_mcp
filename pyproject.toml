@@ -1,0 +1,9 @@
+[project]
+name = "octo-mcp-server"
+version = "0.1.0"
+description = "A server for octo-mcp"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "fastmcp>=2.8.1"
+]
